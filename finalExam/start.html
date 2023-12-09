@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/시작.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="title">
+      <span style="font-weight: bold">밍순이의 심부름</span><br />
+      <span style="font-size: 50%">퀴즈마을편</span>
+    </p>
+
+    <button id="button1" class="start">게임 시작</button>
+    <button id="button2" class="btnOpen">게임 설명</button>
+
+    <div id="pop1" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center><게임 설명></center>
+          <br />
+          1. 주어진 문제를 해결하며 앞으로 나아가는 게임입니다.<br />
+          2. 문제를 틀린다면 해당 문제 페이지로 돌아옵니다.<br />
+          3. 대사를 다 넘기셔야 버튼이 활성화됩니다.<br />
+          4. 표지판 위의 버튼을 클릭하면 문제가 나옵니다.<br />
+          5. 엔딩은 2개이며 운에 따라서 결정됩니다.<br />
+          6. 문제는 총 4문제입니다.<br />
+          7. 대사창은 최대한 재미있도록 해봤습니다.<br />
+          8. 최대 창 크기로 즐겨주세요. (축소 창에선 버튼위치가 이상해요.)<br />
+          9. 즐거운 게임되시길 바랍니다. ╰(*°▽°*)╯<br /><br />
+          <center><button type="button" class="btnClose">닫기</button></center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var next = document.querySelector('.start');
+      next.addEventListener('click', () => {
+        location.replace('./script1.html');
+      });
+
+      var targetOpen = document.querySelector('.btnOpen');
+      targetOpen.addEventListener('click', function () {
+        document.getElementById('pop1').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop1').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

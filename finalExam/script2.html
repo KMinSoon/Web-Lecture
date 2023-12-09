@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/실패.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat5" class="chats">
+        나: 흠... 꽤 걸었는데 다음 표지판이 왜 안 보이지?
+      </p>
+    </div>
+
+    <button id="button14" class="btnSkip">대사 넘기기</button>
+
+    <div id="pop5" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 40px">Game Over</a><br />
+            <button type="button" class="btnClose">다시하기</button><br /><br />
+            (종료를 원하시면 x를 눌러주세요.)
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '나: 좀 싸한데...',
+        '그 순간 땅이 꺼지며 아래로 떨어졌다.',
+        '크게 다친 곳은 없는줄 알았지만 발목이 꺾여 움직일 수 없었다.',
+        '나: 아 인생.. 핸드폰도 고장났네.',
+        '나는 저녁이 되어서야 순찰돌던 사람들에 의해 구조되어 병원에 갈 수 있었다.',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat5').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 2) {
+          document.body.style.background = '#000000';
+        }
+        if (idx == 6) {
+          document.getElementById('button14').style.display = 'none';
+          document.getElementById('chat5').style.display = 'none';
+          document.getElementById('pop5').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        location.replace('game1.html');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!--딸기구매-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/엔딩1.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat13" class="chats">나: 다녀왔습니다.</p>
+    </div>
+
+    <button id="button33" class="btnSkip">대사 넘기기</button>
+
+    <div id="pop14" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 40px">엔딩 1</a><br />
+            <a style="font-size: 20px">그저 산책했을 뿐</a><br />
+            <button type="button" class="btnClose">처음으로</button><br /><br />
+            (종료를 원하시면 x를 눌러주세요.)
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '엄마: 잘 다녀왔어?',
+        '나: 예. 할인 중이라 해서 딸기도 한 박스 사왔어.',
+        '엄마: 어이고 맛있겠네. 남은 돈 있지? 너 용돈해~',
+        '나: ㅇㅓ..어...',
+        '나: (1,000원 남았는데.. 이럴거면 딸기 안 샀지)',
+        '나: (에이 모르겠다. 게임이나 해야지.)',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat13').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 7) {
+          document.getElementById('button33').style.display = 'none';
+          document.getElementById('chat13').style.display = 'none';
+          document.getElementById('pop14').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        location.replace('./start.html');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/질문.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="button15" class="question" disabled>클릭!</button>
+
+    <div>
+      <p id="chat6" class="chats">나: 좋아 좋아 계속 드가자~</p>
+    </div>
+
+    <button id="button16" class="btnSkip">대사 넘기기</button>
+
+    <button id="button17" class="lButton" disabled>(↖️)True</button>
+    <button id="button18" class="rButton" disabled>False(↗️)</button>
+
+    <div id="pop6" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <문제 2><br /><br />
+          0.1 + 1.2 == 1.3<br /><br />
+          <button type="button" class="btnClose">닫기</button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('button15').disabled = false;
+        document.getElementById('button16').style.display = 'none';
+        document.getElementById('chat6').style.display = 'none';
+        document.getElementById('button17').disabled = false;
+        document.getElementById('button18').disabled = false;
+      });
+
+      document.querySelector('.question').addEventListener('click', () => {
+        document.getElementById('pop6').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop6').style.display = 'none';
+      });
+
+      document.querySelector('.lButton').addEventListener('click', () => {
+        location.replace('./script3.html');
+      });
+
+      document.querySelector('.rButton').addEventListener('click', () => {
+        location.replace('./game3.html');
+      });
+    </script>
+  </body>
+</html>

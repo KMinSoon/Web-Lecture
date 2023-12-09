@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/질문.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="button10" class="question" disabled>클릭!</button>
+
+    <div>
+      <p id="chat4" class="chats">나: 이제야 본 문제인가.</p>
+    </div>
+
+    <button id="button11" class="btnSkip">대사 넘기기</button>
+
+    <button id="button12" class="lButton" disabled>(↖️)Yes</button>
+    <button id="button13" class="rButton" disabled>No(↗️)</button>
+
+    <div id="pop4" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <문제 1><br /><br />
+          한세대학교는 경기도 군포시에 위치한 학교이다.<br /><br />
+          <button type="button" class="btnClose">닫기</button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = ['나: 다 맞추면서 가 보자고.'];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat4').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 2) {
+          document.getElementById('button10').disabled = false;
+          document.getElementById('button11').style.display = 'none';
+          document.getElementById('chat4').style.display = 'none';
+          document.getElementById('button12').disabled = false;
+          document.getElementById('button13').disabled = false;
+        }
+      });
+
+      document.querySelector('.question').addEventListener('click', () => {
+        document.getElementById('pop4').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop4').style.display = 'none';
+      });
+
+      document.querySelector('.lButton').addEventListener('click', () => {
+        location.replace('./game2.html');
+      });
+
+      document.querySelector('.rButton').addEventListener('click', () => {
+        location.replace('./script2.html');
+      });
+    </script>
+  </body>
+</html>

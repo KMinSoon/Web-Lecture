@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/실패.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat9" class="chats">
+        나: 딸기하니까 딸기 먹고 싶네 돈 남으면 사갈까.
+      </p>
+    </div>
+
+    <button id="button25" class="btnSkip">대사 넘기기</button>
+
+    <div id="pop10" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 40px">Game Over</a><br />
+            <button type="button" class="btnClose">다시하기</button><br /><br />
+            (종료를 원하시면 x를 눌러주세요.)
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '???: 거기 잠깐!!',
+        '나: 에?',
+        '강도들: 가진 돈 다 내놔!',
+        '나: (아니 지금 왜 강도가 있어? 억까 아니야?)',
+        '그렇게 나는 가진 돈을 다 내주고 다행히 옷은 입은채로 집에 돌아갔다.',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat9').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 5) {
+          document.body.style.background = '#000000';
+        }
+        if (idx == 6) {
+          document.getElementById('button25').style.display = 'none';
+          document.getElementById('chat9').style.display = 'none';
+          document.getElementById('pop10').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        location.replace('game3.html');
+      });
+    </script>
+  </body>
+</html>

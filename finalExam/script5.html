@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/실패.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat11" class="chats">나: 이젠 느낌이 안 좋아도 할 말이 없네.</p>
+    </div>
+
+    <button id="button30" class="btnSkip">대사 넘기기</button>
+
+    <div id="pop12" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 40px">Game Over</a><br />
+            <button type="button" class="btnClose">다시하기</button><br /><br />
+            (종료를 원하시면 x를 눌러주세요.)
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '???: (슈우웅~)',
+        '나: ???',
+        '나: 뭐야, 내 돈!',
+        '멀리서 날아온 새한테 도둑맞은 나머지 마트 앞에서 돌아갈 수 밖에 없었다.',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat11').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 1) {
+          document.body.style.background = '#000000';
+        }
+        if (idx == 5) {
+          document.getElementById('button30').style.display = 'none';
+          document.getElementById('chat11').style.display = 'none';
+          document.getElementById('pop12').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        location.replace('game4.html');
+      });
+    </script>
+  </body>
+</html>

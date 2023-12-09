@@ -1,0 +1,179 @@
+/*start*/
+#title {
+  font-size: 80px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  left: 550px;
+  top: 150px;
+}
+
+#button1 {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  padding: 14px 40px;
+  position: absolute;
+  left: 760px;
+  top: 500px;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#button1:hover {
+  background-color: #b1d5c2;
+  color: #ffffff;
+}
+
+#button2 {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  padding: 14px 40px;
+  position: absolute;
+  left: 760px;
+  top: 600px;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#button2:hover {
+  background-color: #b1d5c2;
+  color: #ffffff;
+}
+
+.popWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.popWrap:after {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: '';
+}
+
+.popWrap .popInner {
+  display: inline-block;
+  padding: 20px 30px;
+  background: #fff;
+  width: 600px;
+  vertical-align: middle;
+  font-size: 20px;
+  text-align: left;
+  position: relative;
+}
+
+/*script1*/
+.chats {
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  margin: 0;
+  padding: 30px;
+  width: 1625px;
+  position: absolute;
+  top: 800px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.btnSkip {
+  position: absolute;
+  bottom: 140px;
+  left: 10px;
+  font-size: 20px;
+}
+
+/*practice*/
+.question {
+  border-radius: 8px;
+  background-color: #f3cf98;
+  color: #000000;
+  border: 2px solid #964b00;
+  font-size: 40px;
+  position: fixed;
+  top: 160px;
+  right: 840px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.question:hover {
+  background-color: #964b00;
+  color: #ffffff;
+}
+
+.lButton {
+  position: absolute;
+  top: 510px;
+  left: 500px;
+  font-size: 50px;
+  border: 2px solid #4682b4;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.lButton:hover {
+  background-color: #4682b4;
+  color: #ffffff;
+}
+
+.rButton {
+  position: absolute;
+  top: 510px;
+  right: 500px;
+  font-size: 50px;
+  border: 2px solid #e03d3d;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.rButton:hover {
+  background-color: #e03d3d;
+  color: #ffffff;
+}
+
+/*pFail*/
+#button9 {
+  position: absolute;
+  top: 160px;
+  left: 800px;
+  font-size: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+#button9:hover {
+  background-color: #e03d3d;
+  color: #ffffff;
+}
+
+/*game3*/
+img {
+  position: absolute;
+  top: 280px;
+  right: 800px;
+}
+
+#button24 {
+  position: absolute;
+  top: 330px;
+  right: 830px;
+}
+
+/*arrive*/
+#berry {
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  top: 150px;
+  left: 500px;
+}

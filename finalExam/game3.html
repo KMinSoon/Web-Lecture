@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/질문.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="button20" class="question" disabled>클릭!</button>
+
+    <div>
+      <p id="chat8" class="chats">나: 저건 아직도 이해가 안돼.</p>
+    </div>
+
+    <button id="button21" class="btnSkip">대사 넘기기</button>
+
+    <button id="button22" class="lButton" disabled>(↖️)2개</button>
+    <button id="button23" class="rButton" disabled>3개(↗️)</button>
+
+    <img src="./picture/일기.png" art="Diary" width="100" height="100" />
+    <button id="button24" class="hiddenBtn" style="display: none">클릭</button>
+
+    <div id="pop8" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <br />
+          <center>
+            <a style="font-size: 30px">문제는 이곳에 없습니다.</a><br /><br />
+            <button type="button" class="btnClose">닫기</button>
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <div id="pop9" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <문제 3><br />
+          다음 중 과일이 아닌 것의 개수는?<br /><br />
+          (수박, 딸기, 사과, 귤, 오이)<br /><br />
+          <button type="button" class="btnClose2">닫기</button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '나: 이진법에서는 무한소수라 잘려서 오차가 생긴다니.',
+        '나: 어우 머리아파.',
+        '나: 이 길은 대체 언제 끝나는거야.',
+        '나: ....? 그럼 어떻게 고르라...어? 저건 뭐지?',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat8').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 4) {
+          document.getElementById('button20').disabled = false;
+          document.getElementById('button21').style.display = 'none';
+          document.getElementById('chat8').style.display = 'none';
+          document.getElementById('button22').disabled = false;
+          document.getElementById('button23').disabled = false;
+        }
+
+        if (idx == 5) {
+          document.getElementById('button21').style.display = 'none';
+          document.getElementById('chat8').style.display = 'none';
+          document.getElementById('button24').style.display = 'block';
+        }
+      });
+
+      document.querySelector('.question').addEventListener('click', () => {
+        document.getElementById('pop8').style.display = 'block';
+      });
+
+      document.querySelector('.hiddenBtn').addEventListener('click', () => {
+        document.getElementById('pop9').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop8').style.display = 'none';
+        document.getElementById('button21').style.display = 'block';
+        document.getElementById('chat8').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose2');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop9').style.display = 'none';
+      });
+
+      document.querySelector('.lButton').addEventListener('click', () => {
+        location.replace('script4.html');
+      });
+
+      document.querySelector('.rButton').addEventListener('click', () => {
+        location.replace('./game4.html');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/질문.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="button4" class="question" disabled>클릭!</button>
+
+    <div>
+      <p id="chat2" class="chats">
+        나: 아~~~~ 귀찮아~~~~ 침대 위에 누워 있고 싶다 그냥~~~~
+      </p>
+    </div>
+
+    <button id="button5" class="btnSkip">대사 넘기기</button>
+
+    <button id="button6" class="lButton" disabled>(↖️)Yes</button>
+    <button id="button7" class="rButton" disabled>No(↗️)</button>
+
+    <div id="pop2" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <left><연습 문제></left><br /><br />
+          * 2월 31일은 실제로 존재하는 날이다.<br /><br />
+          <button type="button" class="btnClose">닫기</button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '나: 봐봐 이거 시작부터 길이 이상하잖아.',
+        '나: 마을 이름 값 하는 것도 아니고 갈림길마다 문제를 풀어야 갈 수 있네.',
+        '나: 이게 맞는건가?',
+        '나: 어휴..... 그냥 후딱 갔다와야겠다.',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat2').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 5) {
+          document.getElementById('button4').disabled = false;
+          document.getElementById('button5').style.display = 'none';
+          document.getElementById('chat2').style.display = 'none';
+          document.getElementById('button6').disabled = false;
+          document.getElementById('button7').disabled = false;
+        }
+      });
+
+      document.querySelector('.question').addEventListener('click', () => {
+        document.getElementById('pop2').style.display = 'block';
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        document.getElementById('pop2').style.display = 'none';
+      });
+
+      document.querySelector('.lButton').addEventListener('click', () => {
+        location.replace('./pFail.html');
+      });
+
+      document.querySelector('.rButton').addEventListener('click', () => {
+        location.replace('./game1.html');
+      });
+    </script>
+  </body>
+</html>

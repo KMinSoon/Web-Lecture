@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/실패.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat7" class="chats">나: 아ㅋㅋ 저건 당연히 True지 ㅋㅋ.</p>
+    </div>
+
+    <button id="button19" class="btnSkip">대사 넘기기</button>
+
+    <div id="pop7" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 40px">Game Over</a><br />
+            <button type="button" class="btnClose">다시하기</button><br /><br />
+            (종료를 원하시면 x를 눌러주세요.)
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '나: 빨리 집에 가서 쉴 수 있겠구만? ㅋㅋ.',
+        '나: 근데 왜 핸드폰 전파가 안 터지냐.',
+        '나: 에이 설마 아니겠지.',
+        '설마가 사람잡는다는 말이 있듯이 틀린 길을 고른 나는 미아가 되고 말았다.',
+        '며칠을 걸었을까, 옆 마을인 십자말마을에 도착했다.',
+        '나는 그곳의 경찰에게 부탁하여 일주일만에 집에 돌아갈 수 있었다.....',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat7').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 4) {
+          document.body.style.background = '#000000';
+        }
+        if (idx == 7) {
+          document.getElementById('button19').style.display = 'none';
+          document.getElementById('chat7').style.display = 'none';
+          document.getElementById('pop7').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        location.replace('game2.html');
+      });
+    </script>
+  </body>
+</html>

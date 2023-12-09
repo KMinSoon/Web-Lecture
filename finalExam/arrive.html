@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>밍순이의 심부름</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-image: url(./picture/마트.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="chat12" class="chats">
+        나: 드디어 왔네. 빨리 장보고 집 가서 쉬어야겠다.
+      </p>
+    </div>
+
+    <button id="button31" class="btnSkip">대사 넘기기</button>
+
+    <img
+      src="./picture/딸기.jpg"
+      alt="딸기 한 박스"
+      id="berry"
+      style="display: none"
+    />
+
+    <div id="pop13" class="popWrap" style="display: none">
+      <div class="popInner">
+        <p>
+          <center>
+            <a style="font-size: 30px"><분기점></a><br />
+            <a style="font-size: 15px">(0~5: 딸기 구매 / 6~9: 딸기 미구매)</a
+            ><br />
+            <a id="randNum" style="font-size: 30px"></a><br />
+            <button type="button" id="button32" class="random">
+              랜덤 숫자 출력
+            </button>
+            <button type="button" class="btnClose">엔딩 보기</button>
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var scriptArr = [
+        '점원: 안녕하세요.',
+        '나: 안녕하세요.',
+        '점원: 심부름 오셨나봐요?',
+        '나: 하하 네.. 집에만 있지 말고 나가라 하셔가지고.',
+        '점원: 하하하 재미있으시네요. 아 오늘 할인하는 상품 있는데 사가실래요?',
+        '나: 음.. 뭐가 할인하는데요?',
+        '점원: 오늘 딸기 한 박스 할인하고 있어요.',
+        '나: 오? 좋은데요? 잠깐 생각 좀 해볼게요.',
+        '나: (어떻게 할까?)',
+      ];
+      var idx = 0;
+      var targetSkip = document.querySelector('.btnSkip');
+      targetSkip.addEventListener('click', function () {
+        document.getElementById('chat12').textContent = scriptArr[idx];
+        idx++;
+
+        if (idx == 7) {
+          document.body.style.background = '#ffffff';
+          document.getElementById('berry').style.display = 'block';
+        }
+
+        if (idx == 10) {
+          document.getElementById('button31').style.display = 'none';
+          document.getElementById('chat12').style.display = 'none';
+          document.getElementById('pop13').style.display = 'block';
+        }
+      });
+
+      var targetClose = document.querySelector('.btnClose');
+      targetClose.addEventListener('click', function () {
+        var end = document.getElementById('randNum');
+        var randValue = parseInt(end.innerText);
+
+        if (randValue > -1 && randValue <= 5) {
+          location.replace('./ending1.html');
+        } else {
+          location.replace('./ending2.html');
+        }
+      });
+
+      var createRandom = document.querySelector('.random');
+      const ul = document.querySelector('#randNum');
+      createRandom.addEventListener('click', () => {
+        document.getElementById('button32').disabled = true;
+        ul.innerHTML = Math.floor(Math.random() * 10);
+      });
+    </script>
+  </body>
+</html>
