@@ -1,44 +1,44 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 #header {
-    height: 100px;
-    background-color: #0055ff;
-    text-align: center;
+  height: 100px;
+  background-color: #0055ff;
+  text-align: center;
 }
 
 #contents {
-    height: 300px;
-    background-color: #ffffff;
-    padding-top: 30px;
+  height: 300px;
+  background-color: #ffffff;
+  padding-top: 30px;
 }
 
 #footer {
-    height: 100px;
-    background-color: #000000;
+  height: 100px;
+  background-color: #000000;
 }
 
 #searchBar {
-    border: #00ff00 3px solid;
-    border-radius: 25px;
-    height: 40px;
-    width: 70%;
-    padding-top: 5px;
-    margin-left: 15%;
+  border: #00ff00 3px solid;
+  border-radius: 25px;
+  height: 40px;
+  width: 70%;
+  padding-top: 5px;
+  margin-left: 15%;
 }
 
 #searchBar input {
-    width: 80%;
-    height: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }

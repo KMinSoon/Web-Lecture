@@ -1,12 +1,24 @@
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+}
+
 /*start*/
 #title {
-  font-size: 80px;
+  font-size: 5vmax;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  margin: 0;
   position: absolute;
-  left: 550px;
-  top: 150px;
+  top: 15%;
+  left: 30%;
+  right: 30%;
 }
 
 #button1 {
@@ -14,11 +26,11 @@
   color: #000000;
   border-radius: 8px;
   border: 2px solid #000000;
-  padding: 14px 40px;
+  padding: 2vmin 6vmin;
+  font-size: 3vmin;
   position: absolute;
-  left: 760px;
-  top: 500px;
-  font-size: 24px;
+  top: 60%;
+  left: 43.5%;
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -32,17 +44,21 @@
   color: #000000;
   border-radius: 8px;
   border: 2px solid #000000;
-  padding: 14px 40px;
+  padding: 2vmin 6vmin;
+  font-size: 3vmin;
   position: absolute;
-  left: 760px;
-  top: 600px;
-  font-size: 24px;
+  top: 70%;
+  left: 43.5%;
   transition-duration: 0.4s;
   cursor: pointer;
 }
 #button2:hover {
   background-color: #b1d5c2;
   color: #ffffff;
+}
+
+.btnClose {
+  font-size: 2vmin;
 }
 
 .popWrap {
@@ -63,11 +79,11 @@
 
 .popWrap .popInner {
   display: inline-block;
-  padding: 20px 30px;
+  padding: 2vmin 6vmin;
   background: #fff;
-  width: 600px;
+  width: 30vmax;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 2vmin;
   text-align: left;
   position: relative;
 }
@@ -76,20 +92,19 @@
 .chats {
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
-  margin: 0;
-  padding: 30px;
-  width: 1625px;
+  padding: 3vmin;
   position: absolute;
-  top: 800px;
-  left: 10px;
-  font-size: 20px;
+  bottom: 3%;
+  left: 0.5%;
+  right: 0.5%;
+  font-size: 2.5vmin;
 }
 
 .btnSkip {
   position: absolute;
-  bottom: 140px;
-  left: 10px;
-  font-size: 20px;
+  bottom: 13%;
+  left: 0.5%;
+  font-size: 2vmin;
 }
 
 /*practice*/
@@ -97,11 +112,11 @@
   border-radius: 8px;
   background-color: #f3cf98;
   color: #000000;
-  border: 2px solid #964b00;
-  font-size: 40px;
-  position: fixed;
-  top: 160px;
-  right: 840px;
+  border: 0.3vmin solid #964b00;
+  font-size: 2.5vmax;
+  position: absolute;
+  top: 16%;
+  left: 44%;
   transition-duration: 0.4s;
   cursor: pointer;
 }
@@ -112,10 +127,10 @@
 
 .lButton {
   position: absolute;
-  top: 510px;
-  left: 500px;
-  font-size: 50px;
-  border: 2px solid #4682b4;
+  top: 48%;
+  left: 20%;
+  font-size: 3vmax;
+  border: 0.3vmin solid #4682b4;
   border-radius: 8px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -127,10 +142,10 @@
 
 .rButton {
   position: absolute;
-  top: 510px;
-  right: 500px;
-  font-size: 50px;
-  border: 2px solid #e03d3d;
+  top: 48%;
+  right: 20%;
+  font-size: 3vmax;
+  border: 0.3vmin solid #e03d3d;
   border-radius: 8px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -143,10 +158,10 @@
 /*pFail*/
 #button9 {
   position: absolute;
-  top: 160px;
-  left: 800px;
-  font-size: 40px;
-  border: 2px solid #ffffff;
+  top: 17%;
+  left: 46.9%;
+  font-size: 2.5vmax;
+  border: 0.1vmin solid #ffffff;
   border-radius: 8px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -159,21 +174,24 @@
 /*game3*/
 img {
   position: absolute;
-  top: 280px;
-  right: 800px;
+  top: 30%;
+  right: 47%;
+  width: 10vmin;
+  height: 12vmin;
 }
 
 #button24 {
   position: absolute;
-  top: 330px;
-  right: 830px;
+  top: 35%;
+  right: 48%;
+  font-size: 2vmin;
 }
 
 /*arrive*/
 #berry {
-  width: 700px;
-  height: 600px;
+  width: 45vmax;
+  height: 35vmax;
   position: absolute;
-  top: 150px;
-  left: 500px;
+  top: 15%;
+  left: 25%;
 }
